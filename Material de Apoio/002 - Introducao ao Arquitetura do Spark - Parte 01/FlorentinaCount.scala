@@ -2,7 +2,9 @@ import org.apache.spark.sql.SparkSession
 
 val spark = SparkSession.builder.getOrCreate()
 
-val florentinaRDD = spark.sparkContext.textFile("/FileStore/tables/florentina.txt")
+val florentina_path = "/FileStore/tables/florentina.txt"
+
+val florentinaRDD = spark.sparkContext.textFile(florentina_path)
 
 val wordFlorentinaRDD = florentinaRDD.flatMap(x => x.split(" "))
 

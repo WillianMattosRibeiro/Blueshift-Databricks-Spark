@@ -2,7 +2,9 @@ from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.getOrCreate()
 
-florentinaRDD = spark.sparkContext.textFile("D:\\PyCharm\\Blueshift-DatabricksSpark\\Material de Apoio\\florentina.txt")
+path_florentina = "D:\\PyCharm\\Blueshift-DatabricksSpark\\Material de Apoio\\florentina.txt"
+
+florentinaRDD = spark.sparkContext.textFile(path_florentina)
 
 wordFlorentinaRDD = florentinaRDD.flatMap(lambda x: x.split(" "))
 
