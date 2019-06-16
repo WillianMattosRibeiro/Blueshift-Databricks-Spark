@@ -52,8 +52,8 @@ Year string,
 Publisher string,
 Global_Sales float
 """
-display(spark.createDataFrame(gamesRDD_6, schema))
+display(spark.createDataFrame(gamesSortedRDD, schema))
 
 # COMMAND ----------
 
-display(gamesRDD_6.toDF(["Name","Platform","Year","Publisher","Global_Sales"]))
+display(gamesSortedRDD.toDF(["Name","Platform","Year","Publisher","Global_Sales"]))
